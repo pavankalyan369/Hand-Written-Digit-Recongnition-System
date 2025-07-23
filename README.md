@@ -46,6 +46,7 @@ Recognizing handwritten digits is essential in fields like postal automation, ba
 
 ### 2. CNN Architecture
 
+```
 Input Shape: (28, 28, 1)
 ↓
 Conv2D(32 filters, 3x3) + ReLU
@@ -61,81 +62,76 @@ Flatten
 Dense(128 units, ReLU)
 ↓
 Dense(10 units, Softmax)
+```
 
-
-##3. Model Training & Evaluation
-Optimizer: Adam
-
-Loss Function: Categorical Crossentropy
-
-Epochs: 5
-
-Batch Size: 64
-
-Validation Split: 10%
+### 3. Model Training & Evaluation
+- **Optimizer**: Adam
+- **Loss Function**: Categorical Crossentropy
+- **Epochs**: 5
+- **Batch Size**: 64
+- **Validation Split**: 10%
 
 Model is trained using:
 
-python
-Copy
-Edit
+```python
 model.fit(x_train, y_train, epochs=5, batch_size=64, validation_split=0.1)
+```
+
 It is evaluated on 10,000 test samples:
 
-python
-Copy
-Edit
+```python
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
-Final Test Accuracy: 99.14%
+```
 
-4. Custom Image Prediction
+**Final Test Accuracy**: 99.14%
+
+### 4. Custom Image Prediction
 Users can upload their own handwritten digit image for prediction:
 
-Image is converted to grayscale.
+- Image is converted to grayscale.
+- Resized to 28×28 pixels.
+- Pixel values normalized to [0, 1].
+- Inverted if background is black.
+- Image is reshaped to (1, 28, 28, 1).
+- Model predicts the digit using .predict() and result is displayed using Matplotlib.
 
-Resized to 28×28 pixels.
+---
 
-Pixel values normalized to [0, 1].
+## Sample Outputs
 
-Inverted if background is black.
+### Accuracy Plot
+Shows the model's training and validation accuracy across 5 epochs.
 
-Image is reshaped to (1, 28, 28, 1).
+### Custom Image Prediction
+**Predicted Digit: 6**
 
-Model predicts the digit using .predict() and result is displayed using Matplotlib.
-
-Sample Outputs
-Accuracy Plot
-Shows the model’s training and validation accuracy across 5 epochs.
-
-
-Custom Image Prediction
-Predicted Digit: 6
 Displays the uploaded image and the predicted digit.
 
+---
 
-Model Performance
-Metric	Value
-Training Accuracy	~99.4%
-Validation Accuracy	~99.2%
-Test Accuracy	99.14%
-Loss	~0.042
-Epochs	5
-Optimizer	Adam
+## Model Performance
 
-How to Run the Project
-On Google Colab
-Open the notebook handwritten_digit_recognition.ipynb in Google Colab.
+| Metric               | Value    |
+|---------------------|----------|
+| Training Accuracy    | ~99.4%   |
+| Validation Accuracy  | ~99.2%   |
+| Test Accuracy        | 99.14%   |
+| Loss                 | ~0.042   |
+| Epochs               | 5        |
+| Optimizer            | Adam     |
 
-Run all cells in order.
+---
 
-Upload your own digit image using the file upload widget.
+## How to Run the Project
 
-View predicted result and output visualization.
+### On Google Colab
+1. Open the notebook `handwritten_digit_recognition.ipynb` in Google Colab.
+2. Run all cells in order.
+3. Upload your own digit image using the file upload widget.
+4. View predicted result and output visualization.
 
-Locally
-bash
-Copy
-Edit
+### Locally
+```bash
 # Clone the repository
 git clone https://github.com/your-username/handwritten-digit-recognition.git
 cd handwritten-digit-recognition
@@ -145,4 +141,4 @@ pip install -r requirements.txt
 
 # Launch the notebook
 jupyter notebook handwritten_digit_recognition.ipynb
-
+```
