@@ -100,7 +100,7 @@ Users can upload their own handwritten digit image for prediction:
 ## Sample Outputs
 
 ### Accuracy Plot
-<img src="outputs/accuracy_plot.png" width="600"/>
+<img src="outputs/ta.png" width="600"/>
 
 Shows the model's training and validation accuracy across 5 epochs.
 
