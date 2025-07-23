@@ -107,7 +107,7 @@ Shows the model's training and validation accuracy across 5 epochs.
 ---
 
 ### Custom Image Prediction
-<img src="outputs/ff.png" width="600"/>
+<img src="outputs/ff.jpg" width="600"/>
 
 **Predicted Digit: 6**
 
