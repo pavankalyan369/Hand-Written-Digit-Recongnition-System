@@ -100,12 +100,25 @@ Users can upload their own handwritten digit image for prediction:
 ## Sample Outputs
 
 ### Accuracy Plot
+<img src="outputs/accuracy_plot.png" width="600"/>
+
 Shows the model's training and validation accuracy across 5 epochs.
 
+---
+
 ### Custom Image Prediction
+<img src="outputs/prediction_example.png" width="600"/>
+
 **Predicted Digit: 6**
 
 Displays the uploaded image and the predicted digit.
+
+---
+
+### Training Progress
+<img src="outputs/training_progress.png" width="600"/>
+
+Visual representation of the model's learning process during training.
 
 ---
 
